@@ -11,6 +11,8 @@ In insert mode: type `a` and hit `<CTRL-X><CTRL-U>` to bring up a list of accent
 
 In normal mode with the cursor on `a`: use `gx` to cycle through the alternatives.
 
+It's always the same process, no matter what accent you want.
+
 
 ## Digraphs
 
