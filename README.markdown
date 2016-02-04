@@ -29,7 +29,7 @@ In insert mode: type `:a`.
 
 In normal mode with the cursor on `a`: type `r:a`.
 
-See `:help mbyte-keymap` and `$VIMRUNTIME/keymap/accents.vim`.  You can toggle the keymap on and off with `<CTRL-^` in insert mode or command mode.
+See `:help mbyte-keymap` and `$VIMRUNTIME/keymap/accents.vim`.  You can toggle the keymap on and off with `<CTRL-^>` in insert mode or command mode.
 
 
 ## Limitations
