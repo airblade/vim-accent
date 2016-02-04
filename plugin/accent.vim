@@ -58,7 +58,10 @@ endfunction
 
 set completefunc=AccentCompletion
 
-nnoremap <silent><script> <Plug>(accent) :call <SID>cycle(matchstr(getline('.')[col('.')-1:-1],'.'))<CR>
+" Capture character under cursor in a way that works with multi-byte
+" characters.  Credit to http://stackoverflow.com/a/23323958/151007.
+nnoremap <silent><script> <Plug>(accent) :call <SID>cycle(matchstr(getline('.'), '\%'.col('.').'c.'))<CR>
+
 if !hasmapto('<Plug>(accent)', 'n')
   nmap gx <Plug>(accent)
 endif
