@@ -1,7 +1,5 @@
 scriptencoding utf-8
 
-set notildeop
-
 if exists("g:loaded_accent") || &cp
   finish
 endif
