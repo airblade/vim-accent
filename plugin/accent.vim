@@ -1,24 +1,28 @@
 scriptencoding utf-8
-
 if exists("g:loaded_accent") || &cp
   finish
 endif
 let g:loaded_accent = 1
 
 let s:lists = [
-  \ ['a','ä','à','â'],
-  \ ['A','Ä','À','Â'],
-  \ ['e','é','è','ê','ë'],
-  \ ['E','É','Ê','È'],
-  \ ['i','î','ï'],
-  \ ['I','Î'],
-  \ ['o','ö','ô'],
-  \ ['O','Ö','Ô'],
+  \ ['a','ä','à','â','á'],
+  \ ['A','Ä','À','Â','Á'],
+  \ ['e','é','è','ê','ë','é'],
+  \ ['E','É','Ê','È','É'],
+  \ ['i','î','ï','í'],
+  \ ['I','Î','Í'],
+  \ ['o','ö','ô','ó'],
+  \ ['O','Ö','Ô','Ó'],
   \ ['s','ß'],
-  \ ['u','ü','û','ù'],
-  \ ['U','Ü','Û','Ù'],
+  \ ['u','ü','û','ù','ú'],
+  \ ['U','Ü','Û','Ù','Ú'],
+  \ ['!','¡'],
+  \ ['?','¿'],
+  \ ['n','ñ'],
+  \ ['N','Ñ'],
+  \ ['!','¡'],
+  \ ['?','¿'],
 \ ]
-
 function! s:cycle(char)
   for list in s:lists
     let index = index(list, a:char)
@@ -63,6 +67,6 @@ set completefunc=AccentCompletion
 nnoremap <silent><script> <Plug>(accent) :call <SID>cycle(matchstr(getline('.'), '\%'.col('.').'c.'))<CR>
 
 if !hasmapto('<Plug>(accent)', 'n')
-  nmap gx <Plug>(accent)
+  nmap tx <Plug>(accent)
 endif
 
