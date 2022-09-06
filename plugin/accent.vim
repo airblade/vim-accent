@@ -7,8 +7,8 @@ let g:loaded_accent = 1
 let s:lists = [
   \ ['a','ä','à','â','á'],
   \ ['A','Ä','À','Â','Á'],
-  \ ['e','é','è','ê','ë','é'],
-  \ ['E','É','Ê','È','É'],
+  \ ['e','é','è','ê','ë'],
+  \ ['E','É','Ê','È'],
   \ ['i','î','ï','í'],
   \ ['I','Î','Í'],
   \ ['o','ö','ô','ó'],
@@ -67,6 +67,6 @@ set completefunc=AccentCompletion
 nnoremap <silent><script> <Plug>(accent) :call <SID>cycle(matchstr(getline('.'), '\%'.col('.').'c.'))<CR>
 
 if !hasmapto('<Plug>(accent)', 'n')
-  nmap tx <Plug>(accent)
+  nmap gx <Plug>(accent)
 endif
 
